@@ -1,0 +1,50 @@
+[
+ {
+  "firstName": "John",
+  "lastName": "Smith",
+  "isAlive": true,
+  "age": 27,
+  "address": {
+    "streetAddress": "21 2nd Street",
+    "city": "New York",
+    "state": "NY",
+    "postalCode": "10021-3100"
+  },
+  "phoneNumbers": [
+    {
+      "type": "home",
+      "number": "212 555-1234"
+    },
+    {
+      "type": "office",
+      "number": "646 555-4567"
+    }
+  ],
+  "children": [],
+  "spouse": null
+ },
+ {
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "isAlive": true,
+  "age": 29,
+  "address": {
+    "streetAddress": "431 Main Street",
+    "city": "San Fransisco",
+    "state": "CA",
+    "postalCode": "50421"
+  },
+  "phoneNumbers": [
+    {
+      "type": "home",
+      "number": "561 555-1234"
+    },
+    {
+      "type": "office",
+      "number": "555 555-4567"
+    }
+  ],
+  "children": [],
+  "spouse": null
+ }
+]
