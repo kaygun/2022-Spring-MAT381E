@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Atabey Kaygun">
+  <title>Math 381E</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Math 381E</h1>
+  <p class="subtitle">Graphs and Networks</p>
+  <p class="author">Atabey Kaygun</p>
+  <p class="date">Monday, May 9th, 2022</p>
+</section>
+
+<section>
+<section id="what-is-a-graph" class="title-slide slide level1">
+<h1>What is a graph</h1>
+
+</section>
+<section id="a-mathematicians-definition" class="slide level2">
+<h2>A Mathematician’s Definition</h2>
+<p>A graph consists of two sets:</p>
+<ul>
+<li class="fragment">A set of vertices (nodes)</li>
+<li class="fragment">A set of edges (connections)</li>
+</ul>
+</section>
+<section id="a-mathematicians-definition-1" class="slide level2">
+<h2>A Mathematician’s Definition</h2>
+<p><span
+class="math display"><em>V</em> = {<em>A</em>, <em>B</em>, <em>C</em>, <em>D</em>, <em>E</em>}</span></p>
+<p><span
+class="math display"><em>E</em> = {(<em>A</em>,<em>B</em>), (<em>A</em>,<em>C</em>), (<em>B</em>,<em>D</em>), (<em>C</em>,<em>D</em>), (<em>D</em>,<em>E</em>)</span></p>
+</section>
+<section id="an-intuitive-definition" class="slide level2">
+<h2>An Intuitive Definition</h2>
+<p>A graph consists of nodes and connections:</p>
+<p><img data-src="image-1.png" /> </p>
+<p><span
+class="math display"><em>V</em> = {<em>A</em>, <em>B</em>, <em>C</em>, <em>D</em>, <em>E</em>}</span></p>
+<p><span
+class="math display"><em>E</em> = {(<em>A</em>,<em>B</em>), (<em>A</em>,<em>C</em>), (<em>B</em>,<em>D</em>), (<em>C</em>,<em>D</em>), (<em>D</em>,<em>E</em>)</span></p>
+</section>
+<section id="types-of-graphs" class="slide level2">
+<h2>Types of Graphs</h2>
+<ul>
+<li class="fragment">Undirected</li>
+<li class="fragment">Directed</li>
+<li class="fragment">Weighted</li>
+</ul>
+</section>
+<section id="undirected-graphs" class="slide level2">
+<h2>Undirected Graphs</h2>
+<p>The edges in an undirected graph have no direction:</p>
+<p><img data-src="image-1.png" /></p>
+</section>
+<section id="directed-graphs" class="slide level2">
+<h2>Directed Graphs</h2>
+<p>The edges in a directed graph have direction:</p>
+<p><img data-src="image-2.png" /> </p>
+</section>
+<section id="weighted-graphs" class="slide level2">
+<h2>Weighted Graphs</h2>
+<p>The edges in a weighted graph have weights:</p>
+<p><img data-src="image-3.png" /> </p>
+</section></section>
+<section>
+<section id="graphs-and-data" class="title-slide slide level1">
+<h1>Graphs and Data</h1>
+
+</section>
+<section id="what-type-of-data-can-be-represented-by-graphs"
+class="slide level2">
+<h2>What type of data can be represented by graphs?</h2>
+<p>Any data where we can relate two data points</p>
+<ul>
+<li class="fragment">Text data</li>
+<li class="fragment">Route information for transportation data</li>
+<li class="fragment">Internet itself</li>
+<li class="fragment">Friendship graphs in social networks</li>
+</ul>
+</section>
+<section id="text-data" class="slide level2">
+<h2>Text data</h2>
+<ul>
+<li class="fragment">Text consists of sentences and words</li>
+<li class="fragment">Sentences are related by words</li>
+<li class="fragment">Words are related by sentences</li>
+</ul>
+</section>
+<section id="route-information-for-transportation" class="slide level2">
+<h2>Route information for transportation</h2>
+<p>Remember HW2?</p>
+<p><img height="500px" src="transportation.png"></p>
+</section>
+<section id="internet-itself" class="slide level2">
+<h2>Internet itself</h2>
+<figure>
+<img data-src="arpanet.png"
+alt="An Early Map of the Whole Internet (1973)" />
+<figcaption aria-hidden="true">An Early Map of the Whole Internet
+(1973)</figcaption>
+</figure>
+</section>
+<section id="my-own-research-subjects" class="slide level2">
+<h2>My Own Research Subjects</h2>
+<figure>
+<img data-src="ncg.png" alt="Atabey’s Map of NCG" />
+<figcaption aria-hidden="true">Atabey’s Map of NCG</figcaption>
+</figure>
+</section></section>
+<section>
+<section id="tools-for-graph-data" class="title-slide slide level1">
+<h1>Tools for Graph Data</h1>
+
+</section>
+<section id="graph-language" class="slide level2">
+<h2>Graph Language</h2>
+<p><a href="https://graphviz.org/">GraphViz</a> is an excellent graph
+definition language and visualization framework.</p>
+</section>
+<section id="graphviz-example" class="slide level2">
+<h2>Graphviz Example</h2>
+<pre><code>graph {
+  A -- { B C } -- { D E F } -- G;
+}</code></pre>
+<p><img data-src="image-4.png" /> </p>
+</section>
+<section id="python-and-graphs" class="slide level2">
+<h2>Python and Graphs</h2>
+<p>The three main graph toolkits are</p>
+<ul>
+<li class="fragment"><a href="https://igraph.org">igraph</a></li>
+<li class="fragment"><a
+href="https://graph-tool.skewed.de/static/doc/index.html">graph-tool</a></li>
+<li class="fragment"><a href="https://networkx.org">networkx</a></li>
+</ul>
+<p>DEMO</p>
+</section></section>
+<section>
+<section id="graph-data" class="title-slide slide level1">
+<h1>Graph Data</h1>
+
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<ol type="1">
+<li class="fragment">Harry Potter Character Network <a
+href="https://github.com/efekarakus/potter-network/tree/master/data">[Efe
+Karakuş]</a></li>
+<li class="fragment">Correlation Network</li>
+<li class="fragment">PhD Hiring Network</li>
+<li class="fragment">Marvel Character Network <a
+href="https://www.kaggle.com/datasets/dannielr/marvel-superheroes">[Kaggle]</a></li>
+<li class="fragment">Social Media Networks <a
+href="https://towardsdatascience.com/how-to-download-and-visualize-your-twitter-network-f009dbbf107b">[Steve
+Hadden]</a></li>
+</ol>
+<p>DEMO</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
